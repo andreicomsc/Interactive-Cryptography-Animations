@@ -1,0 +1,99 @@
+* {  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;  
+  text-decoration: none;
+  font-family: comic sans ms, arial, sans-serif;      
+}
+
+body {
+  height: 100vh;  
+  overflow: hidden;  
+  display: flex;
+  justify-content: center;    
+  background-color: #007399;
+  }
+
+div {  
+  display: flex;  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1px;
+}
+
+#enclosure {
+  height: 100%;  
+  aspect-ratio: 1.9 / 1;
+  justify-content: space-evenly;   
+}
+
+svg {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* header */
+
+#title {
+  font-weight: bold;
+  color: yellow;  
+}
+
+#subTitle {
+  text-decoration: underline;
+  color: yellow;  
+}
+
+#studentTitle {
+  color: aqua;
+}
+
+/* content section */
+
+#contentContainer {
+  height: 61%;
+  width: 70%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.buttonsContainer {
+  height: 100%;
+  width: 25%;
+  justify-content: space-evenly;
+}
+
+#atomContainer {
+  height: 100%;
+  width: 50%;   
+  position: relative;
+}
+
+@keyframes rotationAroundCentre {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+#polariserLogo {
+  height: 14.3%;
+  width: 14.3%;
+  position: absolute;
+  animation: rotationAroundCentre infinite linear 3s;
+}
+
+/* buttons */
+
+button {
+  height: 10%;
+  width: 90%;
+  border-radius: 50px;
+  background-color: #00b300;  
+  cursor: pointer;  
+  transition: background-color 0.3s ease;  
+}
+
+button:hover {
+  background-color: #00ff00;  
+}

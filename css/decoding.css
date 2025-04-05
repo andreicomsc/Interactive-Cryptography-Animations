@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;  
+  text-decoration: none;
+  font-family: comic sans ms, arial, sans-serif;      
+}
+
+body {
+  height: 100vh;  
+  overflow: hidden;  
+  display: flex;
+  justify-content: center;    
+  background-color: #007399;
+}
+
+div {  
+  display: flex;  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1px;
+}
+
+#enclosure {
+  height: 100%;  
+  aspect-ratio: 1.9 / 1;
+  justify-content: space-evenly;   
+}
+
+svg {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* header section */
+
+#titleLineContainer {
+  height: 10%;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.titleLogoContainer {
+  height: 100%;
+  width: 6%;
+  position: relative;
+}
+
+#titleLogo {
+  cursor: pointer;
+}
+
+@keyframes rotationAroundCentre {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+#polariserLogo {
+  height: 14.3%;
+  width: 14.3%;
+  position: absolute;
+  animation: rotationAroundCentre infinite linear 3s;
+  cursor: pointer;
+}
+
+#title {
+  color: yellow;  
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#subTitle {
+  color: aqua;
+}
+
+/* question line section */
+
+#questionLine {
+  height: 22%;
+  width: 60%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#questionLine > div {
+  height: 100%;
+  width: 20%;
+}
+
+.questionOperators {
+  position: relative;
+}
+
+.questionOperators > svg {  
+  position: absolute;
+  opacity: 0;
+}
+
+.header10 {
+  transform: translate(0, -6%);
+  color: #33cccc;
+}
+
+/* result line section */
+
+#resultLine {
+  height: 10%;
+  width: 60%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.resultLineSides {
+  height: 100%;
+  width: 25%;
+}
+
+#resultText {
+  opacity: 0;
+}
+
+/* answers line section */
+
+#answersLine {
+  height: 30%;
+  width: 60%;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#answersLine > div {
+  height: 100%;
+  width: 20%;  
+  border-radius: 50%;
+}
+
+#answersLine > div > svg {    
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#superpositionBits {
+  position: relative;
+}
+
+#superpositionBits > svg {  
+  position: absolute;  
+}
+
+#superpositionBit1 {
+  opacity: 0;
+}
+
+/* buttons */
+
+button {
+  border-radius: 50px;
+  background-color: #00b300;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #00ff00; 
+}
+
+#answerRevealButton {
+  opacity: 0;
+  height: 50%;
+  width: 90%;
+}
+
+#nextQuestion {
+  height: 5%;
+  width: 15%;
+}
+

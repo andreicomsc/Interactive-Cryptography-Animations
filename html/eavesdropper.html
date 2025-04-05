@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/eavesdropper.css">
+  <!-- main animation library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>  
+  <script type="module" src="../js/eavesdropper.js" defer></script>
+  <title>Eavesdropper Quiz</title>
+</head>
+
+<body>
+  <!-- auto adjusts for variable screen sizes, resolutions -->
+  <!-- maintains a constant height/width ratio for all enclosing elements -->
+  <div id="enclosure">
+    <!-- header -->
+    <div id="titleLineContainer">      
+      <div class="titleLogoContainer" title="Home">
+        <!-- atom logo -->
+        <svg id="titleLogo" onclick="window.location.replace('../html/index.html')" viewBox="0 0 100 100">                  
+          <g transform="translate(50, 120.7) rotate(-135)">    
+            <path id="path" 
+              d="M 50 41 
+                 A 39 9 0 0 1 50 59 
+                 A 39 9 0 0 1 50 41"                               
+              stroke-width="1"
+              stroke="yellow"
+              fill="transparent"/>          
+            <circle 
+              cx="0" 
+              cy="0" 
+              r="2"             
+              fill="red">
+              <animateMotion 
+                repeatCount="indefinite"
+                dur="3.4s">
+                <mpath xlink:href="#path"/>
+              </animateMotion>
+            </circle>
+          </g>  
+          <g transform="translate(0, 100) rotate(-90)">    
+            <path id="path" 
+              d="M 50 41 
+                 A 39 9 0 0 1 50 59 
+                 A 39 9 0 0 1 50 41"                               
+              stroke-width="1"
+              stroke="yellow"
+              fill="transparent"/>         
+            <circle 
+              cx="0" 
+              cy="0" 
+              r="2"             
+              fill="#00ff00">
+              <animateMotion 
+                repeatCount="indefinite"
+                dur="3.3s">
+                <mpath xlink:href="#path"/>
+              </animateMotion>
+            </circle>
+          </g>  
+          <g transform="translate(-20.7, 50) rotate(-45)">    
+            <path id="path" 
+              d="M 50 41 
+                A 39 9 0 0 1 50 59 
+                A 39 9 0 0 1 50 41"                               
+              stroke-width="1"
+              stroke="yellow"
+              fill="transparent"/>          
+            <circle 
+              cx="0" 
+              cy="0" 
+              r="2"             
+              fill="blue">
+              <animateMotion 
+                repeatCount="indefinite"
+                dur="3.2s">
+                <mpath xlink:href="#path"/>
+              </animateMotion>
+            </circle>
+          </g>  
+          <g>    
+            <path id="path" 
+              d="M 50 41 
+                A 39 9 0 0 1 50 59 
+                A 39 9 0 0 1 50 41"                               
+              stroke-width="1"
+              stroke="yellow"
+              fill="transparent"/>  
+        
+            <circle 
+              cx="0" 
+              cy="0" 
+              r="2"             
+              fill="purple">
+              <animateMotion 
+                repeatCount="indefinite"
+                dur="3.1s">
+                <mpath xlink:href="#path"/>
+              </animateMotion>
+            </circle>
+          </g>      
+        </svg>
+        <!-- rotating polariser logo -->
+        <div id="polariserLogo" onclick="window.location.replace('../html/index.html')">
+          <svg viewBox="0 0 100 100">
+            <circle 
+              cx="50" 
+              cy="50" 
+              r="45" 
+              fill="#404040"/>            
+            <line 
+              x1="5" 
+              y1="50" 
+              x2="95" 
+              y2="50" 
+              stroke-width="20"
+              stroke="#D3D3D3"/>  
+            <line 
+              x1="50" 
+              y1="5" 
+              x2="50" 
+              y2="95" 
+              stroke-width="20"
+              stroke="#D3D3D3"/>
+            <circle 
+              cx="50" 
+              cy="50" 
+              r="45"           
+              stroke-width="10"
+              stroke="#000000"
+              fill="transparent"/>
+          </svg>
+        </div>
+      </div>
+      <div id="title" class="header3">Quantum Key Distribution Protocol BB84</div>
+      <div class="titleLogoContainer"></div>
+    </div>
+    <div id="eavesdropper" class="header3">Is there an Eavesdropper?</div>
+
+    <!-- question section -->
+    <div id="questionLine">
+      <!-- transmission section sender, content added in js -->  
+      <div class="data">
+        <div id="sender" class="header3">Sender</div>
+        <div id="aliceData"></div>
+      </div>
+      <!-- containts all svg templates for the page -->
+      <div id="templates">    
+        <!-- key bit 0 -->    
+        <svg id="bit0" viewBox="0 0 100 100">      
+          <circle 
+            cx="50" 
+            cy="50" 
+            r="50" 
+            fill="#009900"/>
+          <path
+            d="M 34 50 
+               A 8 14 0 0 1 66 50 
+               A 8 14 0 0 1 34 50" 
+            stroke-width="10"
+            stroke="white"
+            fill="transparent"/>      
+        </svg>
+        <!-- key bit 1 -->    
+        <svg id="bit1" viewBox="0 0 100 100">    
+          <circle 
+            cx="50" 
+            cy="50" 
+            r="50" 
+            fill="#009900"/>
+          <line 
+            x1="34" 
+            y1="50"  
+            x2="53" 
+            y2="23" 
+            stroke-width="10"
+            stroke="white"/>
+          <line 
+            x1="54" 
+            y1="20" 
+            x2="54" 
+            y2="80" 
+            stroke-width="10"
+            stroke="white"/>      
+        </svg>
+        <!-- rectilinear basis for sender -->    
+        <svg id="basisR" viewBox="0 0 100 100">
+          <circle 
+            cx="50" 
+            cy="50" 
+            r="45" 
+            fill="#404040"/>
+          <line 
+            x1="50" 
+            y1="5" 
+            x2="50" 
+            y2="95" 
+            stroke-width="20"
+            stroke="#808080"/>
+          <line 
+            x1="5" 
+            y1="50" 
+            x2="95" 
+            y2="50" 
+            stroke-width="20"
+            stroke="#808080"/>  
+          <circle 
+            cx="50" 
+            cy="50" 
+            r="45"           
+            stroke-width="10"
+            stroke="#000000"
+            fill="transparent"/>
+        </svg>
+        <!-- diagonal basis for sender -->  
+        <svg id="basisD" transform="rotate(45)" viewBox="0 0 100 100">
+          <circle 
+            cx="50" 
+            cy="50" 
+            r="45" 
+            fill="#404040"/>
+          <line 
+            x1="50" 
+            y1="5" 
+            x2="50" 
+            y2="95" 
+            stroke-width="20"
+            stroke="#808080"/>
+          <line 
+            x1="5" 
+            y1="50" 
+            x2="95" 
+            y2="50" 
+            stroke-width="20"
+            stroke="#808080"/>  
+          <circle 
+            cx="50" 
+            cy="50" 
+            r="45"           
+            stroke-width="10"
+            stroke="#000000"
+            fill="transparent"/>
+        </svg>
+        <!-- rectilinear measuring device for receiver -->  
+        <svg id="deviceR" viewBox="0 0 100 100">
+          <circle 
+            cx="50" 
+            cy="50" 
+            r="45" 
+            fill="#404040"/>
+          <line 
+            x1="50" 
+            y1="5" 
+            x2="50" 
+            y2="95" 
+            stroke-width="20"
+            stroke="#D3D3D3"/>
+          <line 
+            x1="5" 
+            y1="50" 
+            x2="95" 
+            y2="50" 
+            stroke-width="20"
+            stroke="#D3D3D3"/>  
+          <circle 
+            cx="50" 
+            cy="50" 
+            r="45"           
+            stroke-width="10"
+            stroke="#000000"
+            fill="transparent"/>
+        </svg>
+        <!-- diagonal measuring device for receiver -->  
+        <svg id="deviceD" transform="rotate(45)" viewBox="0 0 100 100">
+          <circle 
+            cx="50" 
+            cy="50" 
+            r="45" 
+            fill="#404040"/>
+          <line 
+            x1="50" 
+            y1="5" 
+            x2="50" 
+            y2="95" 
+            stroke-width="20"
+            stroke="#D3D3D3"/>
+          <line 
+            x1="5" 
+            y1="50" 
+            x2="95" 
+            y2="50" 
+            stroke-width="20"
+            stroke="#D3D3D3"/>  
+          <circle 
+            cx="50" 
+            cy="50" 
+            r="45"           
+            stroke-width="10"
+            stroke="#000000"
+            fill="transparent"/>
+        </svg>
+      </div>
+
+      <!-- transmission section receiver, content added in js -->  
+      <div class="data">
+        <div id="receiver" class="header3">Receiver</div> 
+        <div id="bobData"></div>
+      </div>
+    </div>
+
+    <!-- result display section -->
+    <div id="resultLineContainer">
+      <!-- displays the justification message -->  
+      <div id="resultLine2" class="header5"></div> 
+      <div id="resultLine1">
+        <div class="resultLineSides"></div>
+        <!-- displays the main message -->  
+        <div id="resultText" class="header5"></div>
+        <div class="resultLineSides">
+          <button id="justificationButton" class="header2">Reveal justification</button>
+        </div>
+      </div>         
+    </div>
+    <!-- answers section -->  
+    <div id="answersLine">      
+      <button id="yesButton" class="header2">Yes</button>
+      <button id="noButton" class="header2">No</button>
+    </div>
+    <!-- next question button -->  
+    <button id="nextQuestion" class="header2" onclick="location.reload()">Next Question</button>
+    <div></div>
+  </div>  
+</body>
+</html>

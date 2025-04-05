@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;  
+  text-decoration: none;
+  font-family: comic sans ms, arial, sans-serif;      
+}
+
+body {
+  height: 100vh;  
+  overflow: hidden;  
+  display: flex;
+  justify-content: center;    
+  background-color: #007399;  
+}
+
+div {    
+  display: flex;  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  padding: 1px;
+}
+
+#enclosure {
+  height: 100%;  
+  aspect-ratio: 1.9 / 1;
+  justify-content: space-around;  
+}
+
+a {
+  height: 90%;
+  width: 67%;  
+  border-radius: 50%;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+svg {
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 50%; 
+}
+
+/* header section */
+
+#titleLineContainer {
+  height: 10%;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.titleLogoContainer {
+  height: 100%;
+  width: 6%;
+  position: relative;
+}
+
+#titleLogo {
+  cursor: pointer;
+}
+
+@keyframes rotationAroundCentre {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+#polariserLogo {
+  height: 14.3%;
+  width: 14.3%;
+  position: absolute;
+  animation: rotationAroundCentre infinite linear 3s;
+  cursor: pointer;
+}
+
+#title {
+  color: yellow;  
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#subTitle {
+  color: aqua;
+}
+
+/* grid section */
+
+#grid {
+  height: 70%;
+  width: 60%;
+  display: grid;  
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: repeat(4, 25%);
+}
+
+.gridCells {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid #00ff00;
+  padding: 0.2rem;
+}
+
+/* photons row */
+
+#photons {
+  position: relative;
+}
+
+#photons > svg {
+  position: absolute;
+}
+
+/* generator row */
+
+#anchorBorderGenerator {
+  border-radius: 0;  
+}
+
+#anchorBorderChannel {  
+  width: 90%;
+  border-radius: 20px;  
+  background-color: #33cccc;
+}
+
+.superpositionBits {  
+  position: relative;
+}
+
+.superpositionBits > svg {
+  position: absolute;
+}
+
+.superpositionBit1 {
+  opacity: 0;
+}
+
+/* info messages */
+
+.infoWindow {
+  display: none;
+  position: fixed;  
+  z-index: 20;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  border: 1px solid black;      
+  padding: 1rem;
+  background-color: antiquewhite;    
+}
+
+.infoWindow:target {
+  display: flex;
+}
+
+.infoIcon {
+  height: 4rem; 
+}
+
+.infoTitle {
+  margin-top: 1rem; 
+  font-size: 1.5rem; 
+  text-decoration: underline;
+}
+
+.infoContentStart {
+  align-items: start;
+}
+
+.infoLine {
+  margin-top: 1rem;   
+  flex-direction: row;  
+  font-size: 1rem;
+}
+
+.infoImg {
+  height: 20rem; 
+  border-radius: 20px;
+}
+
+.infoBit {
+  width: 3rem;
+}
+
+.infoClose {
+  margin-top: 1rem;
+  font-size: 1.5rem; 
+  color: blue;
+}
+
+#photonContent {
+  flex-direction: row;
+  font-size: 1rem;
+}
+
+#photonDelimiter {
+  width: 3rem;
+}
+
+#photonProperties > li {
+  margin: 1rem;
+  text-align: start; 
+}
+
+#infoContentKeyBits {
+  align-items: start;
+  flex-direction: row;
+}
+
+#keyBitsDelimiter {
+  width: 5rem;
+}
+
+#videos {  
+  width: 77%;
+  flex-direction: row;
+  justify-content: start;
+}
+
+#linkFeynman {
+  width: 40%;  
+}
+
+#linkEinsteinBohr {
+  width: 34%;
+}
+
+#videosMiddleDelimiter {
+  width: 22%;
+  color: aqua;  
+}
+
+.bottomLinks {  
+  position: relative;
+  z-index: 10;
+  color: yellow;  
+}
+
+.bottomLinks::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 2%;
+  height: 3px;
+  width: 0;
+  transition: width 0.5s ease;
+  background-color: #00ff00;    
+}
+
+#linkEinsteinBohr::before {
+  left: 3.5%;
+}
+
+#linkFeynman:hover::before {
+  width: 96%;    
+}
+
+#linkEinsteinBohr:hover::before {
+  width: 93%;    
+}
+
+.infoVideo {
+  margin-top: 1rem;   
+  height: 20rem; 
+  border-radius: 20px;
+}
+
+.linkYouTube {
+  margin-top: 1rem; 
+  width: 100%;
+  flex-direction: row;
+  font-size: 1rem;
+}
+
+.linkFullVideo {
+  width: 9%;
+}

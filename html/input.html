@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/input.css">
+  <script type="module" src="../js/input.js" defer></script>
+  <title>Input</title>
+</head>
+
+<body>
+  <!-- auto adjusts for variable screen sizes, resolutions -->
+  <!-- maintains a constant height/width ratio for all enclosing elements -->
+  <div id="enclosure">
+    <!-- header -->
+    <div id="titleLineContainer">
+      <div class="titleLogoContainer" title="Home">
+        <!-- atom logo -->
+        <svg id="titleLogo" onclick="window.location.replace('../html/index.html')" viewBox="0 0 100 100">                  
+          <g transform="translate(50, 120.7) rotate(-135)">    
+            <path id="path" 
+              d="M 50 41 
+                 A 39 9 0 0 1 50 59 
+                 A 39 9 0 0 1 50 41"                               
+              stroke-width="1"
+              stroke="yellow"
+              fill="transparent"/>          
+            <circle 
+              cx="0" 
+              cy="0" 
+              r="2"             
+              fill="red">
+              <animateMotion 
+                repeatCount="indefinite"
+                dur="3.4s">
+                <mpath xlink:href="#path"/>
+              </animateMotion>
+            </circle>
+          </g>  
+          <g transform="translate(0, 100) rotate(-90)">    
+            <path id="path" 
+              d="M 50 41 
+                 A 39 9 0 0 1 50 59 
+                 A 39 9 0 0 1 50 41"                               
+              stroke-width="1"
+              stroke="yellow"
+              fill="transparent"/>          
+            <circle 
+              cx="0" 
+              cy="0" 
+              r="2"             
+              fill="#00ff00">
+              <animateMotion 
+                repeatCount="indefinite"
+                dur="3.3s">
+                <mpath xlink:href="#path"/>
+              </animateMotion>
+            </circle>
+          </g>  
+          <g transform="translate(-20.7, 50) rotate(-45)">    
+            <path id="path" 
+              d="M 50 41 
+                 A 39 9 0 0 1 50 59 
+                 A 39 9 0 0 1 50 41"                               
+              stroke-width="1"
+              stroke="yellow"
+              fill="transparent"/>         
+            <circle 
+              cx="0" 
+              cy="0" 
+              r="2"             
+              fill="blue">
+              <animateMotion 
+                repeatCount="indefinite"
+                dur="3.2s">
+                <mpath xlink:href="#path"/>
+              </animateMotion>
+            </circle>
+          </g>  
+          <g>    
+            <path id="path" 
+              d="M 50 41 
+                 A 39 9 0 0 1 50 59 
+                 A 39 9 0 0 1 50 41"                               
+              stroke-width="1"
+              stroke="yellow"
+              fill="transparent"/>          
+            <circle 
+              cx="0" 
+              cy="0" 
+              r="2"             
+              fill="purple">
+              <animateMotion 
+                repeatCount="indefinite"
+                dur="3.1s">
+                <mpath xlink:href="#path"/>
+              </animateMotion>
+            </circle>
+          </g>      
+        </svg>
+        <!-- rotating polariser logo -->
+        <div id="polariserLogo" onclick="window.location.replace('../html/index.html')">
+          <svg viewBox="0 0 100 100">
+            <circle 
+              cx="50" 
+              cy="50" 
+              r="45" 
+              fill="#404040"/>            
+            <line 
+              x1="5" 
+              y1="50" 
+              x2="95" 
+              y2="50" 
+              stroke-width="20"
+              stroke="#D3D3D3"/>  
+            <line 
+              x1="50" 
+              y1="5" 
+              x2="50" 
+              y2="95" 
+              stroke-width="20"
+              stroke="#D3D3D3"/>
+            <circle 
+              cx="50" 
+              cy="50" 
+              r="45"           
+              stroke-width="10"
+              stroke="#000000"
+              fill="transparent"/>
+          </svg>
+        </div>
+      </div>
+      <div id="title" class="header3">Animation Input Data</div>
+      <div class="titleLogoContainer"></div>
+    </div>
+    <!-- INPUT FORM -->
+    <form id="inputForm" action="animation.html" method="GET">
+      <!-- instructions section -->
+      <div class="sections">
+        <p id="instructions">The below input fields should:</p>     
+        <ol>
+          <li>Contain bits of "0" and "1" only.</li>
+          <li id="lengthError">Be of the same length, and contain at least 10 bits each.</li>
+          <li id="basisMatchError">The Encoding and Measuring bases 
+                                   should have at least 4 matching bits, index wise.</li>
+        </ol>
+      </div> 
+      <!-- Initial Key Input section -->
+      <div class="sections">
+        <div class="inputFieldsContainers header1">
+          <p>Initial Key:</p>
+          <input 
+            type="text" 
+            id="inputInitialKeyId" 
+            class="inputFields header1"
+            name="inputInitialKeyData" 
+            minlength="10"
+            maxlength="15"
+            pattern="[01]{10,15}" 
+            autocomplete="off"
+            required>
+        </div>
+        <p>0 - denotes a classical binary "0" Key bit, transmitted from Sender to Receiver.</p>
+        <p>1 - denotes a classical binary "1" Key bit, transmitted from Sender to Receiver.</p>
+      </div>
+      <!-- Encoding Basis Input section -->
+      <div class="sections">        
+        <div class="inputFieldsContainers header1">
+          <p>Encoding Basis:</p>
+          <input 
+            type="text" 
+            id="inputEncodingBasisId" 
+            class="inputFields header1"
+            name="inputEncodingBasisData" 
+            minlength="10"
+            maxlength="15"
+            pattern="[01]{10,15}" 
+            autocomplete="off"
+            required>
+        </div>
+        <p>0 - denotes that the Initial Key bit is Encoded by the Sender using a Rectilinear Basis.</p>
+        <p>1 - denotes that the Initial Key bit is Encoded by the Sender using a Diagonal Basis.</p>
+      </div>      
+      <!-- Measuring Basis Input section -->
+      <div class="sections">        
+        <div class="inputFieldsContainers header1">
+          <p>Measuring Basis:</p>          
+          <input 
+            type="text" 
+            id="inputMeasuringBasisId" 
+            class="inputFields header1"
+            name="inputMeasuringBasisData" 
+            minlength="10"
+            maxlength="15"
+            pattern="[01]{10,15}" 
+            autocomplete="off"
+            required>
+        </div>
+        <p>0 - denotes that the received Key bit is Measured by the Receiver using a Rectilinear Basis.</p>
+        <p>1 - denotes that the received Key bit is Measured by the Receiver using a Diagonal Basis.</p>
+      </div>
+      <!-- Eavesdropper check box -->      
+      <div id="checkBoxContainer">
+        <label for="checkBoxId" id="checkBoxLabel" class="header1">Eavesdropper present?</label>
+        <input type="checkbox" id="checkBoxId" name="checkBoxData">
+      </div>      
+      <!-- Eavesdropper Interference Input section -->
+      <div id="eveSection" class="sections">        
+        <div class="inputFieldsContainers header1">
+          <p>Eavesdropper status:</p>          
+          <input 
+            type="text" 
+            id="inputEavesdropperId" 
+            class="inputFields header1"
+            name="inputEavesdropperData" 
+            minlength="10"
+            maxlength="15"
+            pattern="[01]{10,15}" 
+            autocomplete="off"
+            required>
+        </div>
+        <p>0 - denotes that the Eavesdropper is Passive during this Key bit transmission.</p>
+        <p>1 - denotes that the Eavesdropper is Active during this Key bit transmission.</p>
+      </div>
+      <!-- controls buttons section -->     
+      <div id="controls">
+        <button type="reset" class="header2">Reset</button>
+        <button type="submit" id="submitButton" class="header2">Submit</button>
+        <button type="button" id="randomiseButton" class="header2">Randomise All</button>
+      </div>
+      <div></div>
+    </form>
+  </div>
+</body>
+</html>

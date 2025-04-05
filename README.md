@@ -1,5 +1,6 @@
 # Interactive Cryptography Animations for Education
-Quantum Key Distribution Protocol BB84.
+Quantum Key Distribution Protocol BB84.  
+See gallery for details.
 
 ## Installation
 

@@ -1,4 +1,4 @@
-# Interactive Cryptography Animations for Education
+# Interactive Cryptography Animations
 Quantum Key Distribution Protocol BB84.
 
 ## Installation

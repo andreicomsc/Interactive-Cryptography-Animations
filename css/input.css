@@ -67,7 +67,7 @@ svg {
 
 #title {
   color: yellow;  
-  text-decoration: underline;
+  /*text-decoration: underline;*/
   font-weight: bold;
 }
 

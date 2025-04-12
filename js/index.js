@@ -21,6 +21,7 @@ export function adjustBodyAndFontSizes() {
   let headers1 = document.querySelectorAll('.header1');
   let headers2 = document.querySelectorAll('.header2');
   let headers3 = document.querySelectorAll('.header3');
+  let headers4 = document.querySelectorAll('.header4');
   let headers5 = document.querySelectorAll('.header5');
   let headers10 = document.querySelectorAll('.header10');
   let baseFontMinus = document.querySelectorAll('.baseFontMinus');
@@ -34,6 +35,9 @@ export function adjustBodyAndFontSizes() {
   });
   headers3.forEach(function(header) {
     header.style.fontSize = adjustedFontSize * 3 + 'px';
+  });
+  headers4.forEach(function(header) {
+    header.style.fontSize = adjustedFontSize * 4 + 'px';
   });
   headers5.forEach(function(header) {
     header.style.fontSize = adjustedFontSize * 5 + 'px';

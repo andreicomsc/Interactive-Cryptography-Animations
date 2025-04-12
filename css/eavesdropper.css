@@ -70,6 +70,11 @@ svg {
 #sender,
 #receiver {
   color: yellow;  
+  /*text-decoration: underline;*/
+}
+
+#sender,
+#receiver {
   text-decoration: underline;
 }
 

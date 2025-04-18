@@ -4,7 +4,8 @@
   box-sizing: border-box;
   text-align: center;  
   text-decoration: none;
-  font-family: comic sans ms, arial, sans-serif;      
+  font-family: comic sans ms, arial, sans-serif;
+  /*border: 1px solid white;*/
 }
 
 body {
@@ -96,4 +97,8 @@ button {
 
 button:hover {
   background-color: #00ff00;  
+}
+
+#email {
+  font-family: arial, sans-serif;
 }

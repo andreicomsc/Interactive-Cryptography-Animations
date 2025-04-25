@@ -3,6 +3,20 @@
 // GLOBAL function for body and font size settings dynamic adjustment
 // it is used by all other pages
 export function adjustBodyAndFontSizes() { 
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
   // defines the min window height and the window to font ratio
   const bodyMinHeight = 600;  
   const windowToFontRatio = 0.014;
@@ -53,3 +67,10 @@ export function adjustBodyAndFontSizes() {
 // loads and monitors size settings for the current page
 adjustBodyAndFontSizes();
 window.addEventListener('resize', adjustBodyAndFontSizes);
+
+// checks if the browser is Chrome and displays a prompt
+const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+if (!isChrome) {
+  alert(`This application is optimised for Google Chrome.
+Please switch to Chrome Browser for the best experience.`);
+}

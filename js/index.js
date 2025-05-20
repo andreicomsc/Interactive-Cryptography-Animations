@@ -64,6 +64,6 @@ Please switch to Chrome Browser for the best experience.`);
 // checks if the device is mobile and displays a prompt
 const isMobile = /Mobi|Mobile|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 if (isMobile) {
-  alert(`This application is optimised for Desktop.
+  alert(`This application is optimised for Desktop only.
 Please switch to a PC/Laptop for the best experience.`);
       }  

@@ -50,20 +50,35 @@ export function adjustBodyAndFontSizes() {
   });
 };
 
+function isMobile() {
+  return /Mobi|Mobile|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+function isPhone() {  
+  let screenWidth = screen.width;
+  let screenHeight = screen.height;
+  let screenRatio = 0;
+
+  if ( screenWidth > screenHeight ) { screenRatio = screenWidth / screenHeight }
+  else { screenRatio = screenHeight / screenWidth }
+  
+  if ( screenRatio > 2 ) { return true; }
+  else { return false; }
+}
+
+function isChrome() {
+  return /Chrome/i.test(navigator.userAgent) && /Google Inc/i.test(navigator.vendor);
+}
+
 // loads and monitors size settings for the current page
 adjustBodyAndFontSizes();
 window.addEventListener('resize', adjustBodyAndFontSizes);
 
-// checks if the browser is Chrome and displays a prompt
-const isChrome = /Chrome/i.test(navigator.userAgent) && /Google Inc/i.test(navigator.vendor);
-if (!isChrome) {
-  alert(`This application is optimised for Google Chrome.
-Please switch to Chrome Browser for the best experience.`);
+if ( isMobile() || isPhone() ) {
+  alert(`This application is optimised for Desktop only. Please switch to a PC/Laptop for the best experience.`);
+}  
+else {
+  if ( !isChrome() ) {
+    alert(`This application is optimised for Google Chrome Browser. Please switch to Chrome for the best experience.`);
+  }
 }
-
-// checks if the device is mobile and displays a prompt
-const isMobile = /Mobi|Mobile|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-if (isMobile) {
-  alert(`This application is optimised for Desktop only.
-Please switch to a PC/Laptop for the best experience.`);
-      }  

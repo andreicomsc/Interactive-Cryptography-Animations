@@ -3,21 +3,38 @@
 // GLOBAL function for body and font size settings dynamic adjustment
 // it is used by all other pages
 export function adjustBodyAndFontSizes() { 
-  // defines the min window height and the window to font ratio
-  const bodyMinHeight = 600;  
-  const windowToFontRatio = 0.014;
-  // sets the body min height
-  document.body.style.minHeight = bodyMinHeight + 'px';
-  // limits the min height for font size purposes
-  let windowCurrentHeight = window.innerHeight;
-  if ( windowCurrentHeight < bodyMinHeight ) {
-     windowCurrentHeight = bodyMinHeight; 
+
+  // define the constants for the enclosure and font ratios
+  const enclosureRatio = 1.9;
+  const enclosureFontRatio = 0.014;
+  
+  // define variables
+  let enclosureWidth = window.innerWidth;
+  let enclosureHeight = window.innerHeight;
+  let enclosure = document.getElementById("enclosure");
+
+  // adjust enclosure size to keep inside viewport
+  if ( enclosureWidth > enclosureHeight ) {
+    if ( enclosureWidth / enclosureHeight > enclosureRatio ) {
+      enclosureWidth = enclosureHeight * enclosureRatio;
+    }
+    else {
+      enclosureHeight = enclosureWidth / enclosureRatio;
+    }
   }
-  // sets the base font size
-  let adjustedFontSize = windowCurrentHeight * windowToFontRatio;
+  else {
+    enclosureHeight = enclosureWidth / enclosureRatio;
+  }
+
+  // assign new values to enclosure size
+  enclosure.style.height = enclosureHeight + 'px';
+  enclosure.style.width = enclosureWidth + 'px';
+
+  // set the base font size
+  let adjustedFontSize = enclosureHeight * enclosureFontRatio;
   document.body.style.fontSize = adjustedFontSize + 'px';
 
-  // defines the main header sizes
+  // define the main header sizes
   let headers1 = document.querySelectorAll('.header1');
   let headers2 = document.querySelectorAll('.header2');
   let headers3 = document.querySelectorAll('.header3');
@@ -26,7 +43,7 @@ export function adjustBodyAndFontSizes() {
   let headers10 = document.querySelectorAll('.header10');
   let baseFontMinus = document.querySelectorAll('.baseFontMinus');
 
-  // dynamically adjusts all headers
+  // dynamically adjust all headers
   headers1.forEach(function(header) {
         header.style.fontSize = adjustedFontSize * 1.5 + 'px';
   });

@@ -23,11 +23,6 @@ div {
   padding: 1px;
 }
 
-#enclosure {
-  height: 100%;  
-  aspect-ratio: 1.9 / 1;
-}
-
 svg {
   max-height: 100%;
   max-width: 100%;

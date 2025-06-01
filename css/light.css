@@ -24,8 +24,6 @@ div {
 }
 
 #enclosure {
-  height: 100%;
-  aspect-ratio: 1.9 / 1;
   justify-content: space-evenly;   
 }
 

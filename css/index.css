@@ -14,6 +14,7 @@ body {
   display: flex;
   justify-content: center;    
   background-color: #007399;
+  /*border: 1px solid magenta;*/
   }
 
 div {  
@@ -25,9 +26,8 @@ div {
 }
 
 #enclosure {
-  height: 100%;  
-  aspect-ratio: 1.9 / 1;
   justify-content: space-evenly;   
+  /*border: 1px solid greenyellow;*/
 }
 
 svg {

@@ -5,4 +5,4 @@ The primary goal of this project was to deepen my understanding of both, quantum
 
 This project enhanced my proficiency in: JavaScript and DOM manipulation, animation sequencing with GSAP, translating theoretical cryptographic protocols into intuitive visual formats, and creating responsive and visually engaging interfaces for technical education.
 
-## View in browser [here](https://andreicomsc.github.io/Interactive-Cryptography-Animations/). 
+## View in browser [here](https://andreicomsc.github.io/Interactive-Cryptography-Animations).  
